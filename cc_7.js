@@ -133,3 +133,18 @@ let budget = createBudgetTracker();
 //Test cases - Values can be changed
 budget(300); //Expected output: -$300
 budget(200); //Expected output: -$500
+
+//Task 8 - Business Growth Projection
+
+//Recursive function that projects revenue growth by 5% annually until a maximum of 10 years is reached
+function calculateGrowth(years, revenue) {
+    //Stopping recursion after 10 years and returning the projected revenue to two decimal places
+    if (years >= 10) return `Projected revenue: $${revenue.toFixed(2)}`;
+
+    //Incresing the revenue by 5% and recursing for the next year
+    return calculateGrowth(years + 1, revenue * 1.05);
+};
+
+//Test cases - Values can be changed
+console.log(calculateGrowth(8, 1000)); //Expected output - Projected revenue: $1102.50
+console.log(calculateGrowth(5, 5000)); //Expected output - Projected revenue: $6381.41
