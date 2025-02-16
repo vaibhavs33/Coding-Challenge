@@ -141,7 +141,7 @@ function calculateGrowth(years, revenue) {
     //Stopping recursion after 10 years and returning the projected revenue to two decimal places
     if (years >= 10) return `Projected revenue: $${revenue.toFixed(2)}`;
 
-    //Incresing the revenue by 5% and recursing for the next year
+    //Increasing the revenue by 5% and recursing for the next year
     return calculateGrowth(years + 1, revenue * 1.05);
 };
 
